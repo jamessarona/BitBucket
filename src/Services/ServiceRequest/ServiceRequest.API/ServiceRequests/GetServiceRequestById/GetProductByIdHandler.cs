@@ -5,7 +5,7 @@ namespace ServiceRequest.API.ServiceRequests.GetServiceRequestById;
 public record GetServiceRequestByIdQuery(Guid Id) : IQuery<GetServiceRequestByIdResult>;
 public record GetServiceRequestByIdResult(Service ServiceRequest);
 
-internal class GetProductByIdQueryHandler
+internal class GetServiceRequestByIdQueryHandler
     (IDocumentSession session)
     : IQueryHandler<GetServiceRequestByIdQuery, GetServiceRequestByIdResult>
 {

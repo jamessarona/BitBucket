@@ -3,7 +3,7 @@ namespace ServiceRequest.API.ServiceRequests.GetServiceRequestById;
 
 public record GetServiceRequestByIdResponse(Service ServiceRequest);
 
-public class GetProductByIdEndpoint : ICarterModule
+public class GetServiceRequestByIdEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
