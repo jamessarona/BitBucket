@@ -22,6 +22,10 @@ if (builder.Environment.IsDevelopment())
     builder.Services.InitializeMartenWith<ServiceRequestInitialData>();
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
+
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
