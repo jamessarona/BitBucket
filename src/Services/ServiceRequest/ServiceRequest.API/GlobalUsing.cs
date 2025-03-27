@@ -1,11 +1,14 @@
 ﻿global using BuildingBlocks.Behaviors;
 global using BuildingBlocks.Exceptions.Handler;
-global using BitBucket.Enums;
-global using BitBucket.Models;
-global using BitBucket.Data;
+global using ServiceRequest.API.Models;
+global using ServiceRequest.API.Enums;
+global using ServiceRequest.API.Abstractions;
 global using Marten;
 global using Marten.Schema;
 global using FluentValidation;
 global using Carter;
 global using HealthChecks.UI.Client;
 global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+global using BuildingBlocks.CQRS;
+global using Mapster;
+global using MediatR;

@@ -1,4 +1,4 @@
-﻿namespace BitBucket.Enums;
+﻿namespace ServiceRequest.API.Enums;
 
 public enum CurrentStatus
 {

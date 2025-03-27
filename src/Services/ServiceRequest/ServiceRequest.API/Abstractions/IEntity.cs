@@ -1,4 +1,4 @@
-﻿namespace BitBucket.Abstractions;
+﻿namespace ServiceRequest.API.Abstractions;
 
 public interface IEntity<T> : IEntity
 {

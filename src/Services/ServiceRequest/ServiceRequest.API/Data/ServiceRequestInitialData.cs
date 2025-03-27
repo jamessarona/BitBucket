@@ -1,4 +1,4 @@
-﻿namespace BitBucket.Data;
+﻿namespace ServiceRequest.API.Data;
 
 public class ServiceRequestInitialData : IInitialData
 {
@@ -6,16 +6,16 @@ public class ServiceRequestInitialData : IInitialData
     {
         using var session = store.LightweightSession();
 
-        if (await session.Query<ServiceRequest>().AnyAsync())
+        if (await session.Query<Service>().AnyAsync())
             return;
 
-        session.Store<ServiceRequest>(GetPreconfiguredServiceRequests());
+        session.Store<Service>(GetPreconfiguredServiceRequests());
         await session.SaveChangesAsync();
     }
 
-    public static IEnumerable<ServiceRequest> GetPreconfiguredServiceRequests() => new List<ServiceRequest>()
+    public static IEnumerable<Service> GetPreconfiguredServiceRequests() => new List<Service>()
         {
-            new ServiceRequest
+            new Service
             {
                 Id = Guid.Parse("11111111-1111-1111-1111-111111111111"),
                 BuildingCode = "B123",
@@ -26,7 +26,7 @@ public class ServiceRequestInitialData : IInitialData
                 LastModifiedBy = "James",
                 LastModifiedDate = DateTime.UtcNow
             },
-            new ServiceRequest
+            new Service
             {
                 Id = Guid.Parse("22222222-2222-2222-2222-222222222222"),
                 BuildingCode = "B456",
@@ -37,7 +37,7 @@ public class ServiceRequestInitialData : IInitialData
                 LastModifiedBy = "Angelo",
                 LastModifiedDate = DateTime.UtcNow
             },
-            new ServiceRequest
+            new Service
             {
                 Id = Guid.Parse("33333333-3333-3333-3333-333333333333"),
                 BuildingCode = "B789",

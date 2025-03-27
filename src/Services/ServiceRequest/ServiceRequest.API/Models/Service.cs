@@ -1,9 +1,6 @@
-﻿using BitBucket.Abstractions;
-using BitBucket.Enums;
+﻿namespace ServiceRequest.API.Models;
 
-namespace BitBucket.Models;
-
-public class ServiceRequest : Entity<Guid>
+public class Service : Entity<Guid>
 {
     public Guid Id { get; set; }
     public string BuildingCode { get; set; } = default!;
