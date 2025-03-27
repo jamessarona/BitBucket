@@ -9,8 +9,7 @@ public class GetServiceRequestsEndpoint : ICarterModule
     {
         app.MapGet("/servicerequest", async ([AsParameters] GetServiceRequestsRequest request, ISender sender) =>
         {
-            var query = request.Adapt<GetServiceRequestsQuery>();
-            var result = await sender.Send(query);
+            var result = await sender.Send(new GetServiceRequestsQuery());
             var response = result.Adapt<GetServiceRequestsResponse>();
 
             if (!response.ServiceRequest.Any())
