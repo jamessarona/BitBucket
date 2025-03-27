@@ -3,7 +3,7 @@ namespace ServiceRequest.API.ServiceRequests.CreateServiceRequest;
 
 public record CreateServiceRequestCommand(string BuildingCode, string Description, string CreatedBy, string LastModifiedBy)
     : ICommand<CreateServiceRequestResult>;
-public record CreateServiceRequestResult(Guid id);
+public record CreateServiceRequestResult(Guid Id);
 
 public class CreateServiceRequestCommandValidator : AbstractValidator<CreateServiceRequestCommand>
 {
