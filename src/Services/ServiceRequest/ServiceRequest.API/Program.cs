@@ -13,6 +13,14 @@ builder.Services.AddValidatorsFromAssembly(assembly);
 
 builder.Services.AddCarter();
 
+builder.Services.AddMarten(opts =>
+{
+    opts.Connection(builder.Configuration.GetConnectionString("Database")!);
+}).UseLightweightSessions();
+
+if (builder.Environment.IsDevelopment())
+    builder.Services.InitializeMartenWith<ServiceRequestInitialData>();
+
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 var app = builder.Build();
 
