@@ -18,7 +18,7 @@ public class GetServiceRequestsEndpoint : ICarterModule
 
             return Results.Ok(response);
         })
-        .WithName("Read all service requests")
+        .WithName("GetServiceRequests")
         .Produces<GetServiceRequestsResponse>(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status204NoContent)
         .ProducesProblem(StatusCodes.Status400BadRequest)
