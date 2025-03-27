@@ -3,6 +3,7 @@ global using BuildingBlocks.Exceptions.Handler;
 global using ServiceRequest.API.Models;
 global using ServiceRequest.API.Enums;
 global using ServiceRequest.API.Abstractions;
+global using ServiceRequest.API.Data;
 global using Marten;
 global using Marten.Schema;
 global using FluentValidation;
