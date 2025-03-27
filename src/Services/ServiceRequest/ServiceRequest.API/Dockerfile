@@ -13,6 +13,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Services/ServiceRequest/ServiceRequest.API/ServiceRequest.API.csproj", "Services/ServiceRequest/ServiceRequest.API/"]
+COPY ["BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj", "BuildingBlocks/BuildingBlocks/"]
 RUN dotnet restore "./Services/ServiceRequest/ServiceRequest.API/ServiceRequest.API.csproj"
 COPY . .
 WORKDIR "/src/Services/ServiceRequest/ServiceRequest.API"
