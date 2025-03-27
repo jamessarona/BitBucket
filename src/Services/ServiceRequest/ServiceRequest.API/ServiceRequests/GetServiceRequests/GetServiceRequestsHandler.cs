@@ -3,7 +3,7 @@
 namespace ServiceRequest.API.ServiceRequests;
 
 public record GetServiceRequestsQuery() : IQuery<GetServiceRequestsResult>;
-public record GetServiceRequestsResult(IEnumerable<Service> ServiceRequests);
+public record GetServiceRequestsResult(IEnumerable<Service> ServiceRequest);
 
 internal class GetServiceRequestsQueryHandler
     (IDocumentSession session)
